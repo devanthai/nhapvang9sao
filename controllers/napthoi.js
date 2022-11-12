@@ -108,12 +108,7 @@ router.post('/', async (req, res) => {
             else {
                 const rs = await new hisNapvang({ server: req.user.server, nhanvat: tnv, taikhoan: req.user.name, sovang: vang, uid: req.user._id }).save()
                 console.log(rs)
-                setTimeout(async () => {
-                    const check = await hisNapvang.findOne({ _id: rs._id, status: -1 })
-                    if (check) {
-                        await hisNapvang.deleteOne({ _id: rs._id })
-                    }
-                }, 600000);
+               
                 return res.send({ err: 0, message: "Tạo đơn thành công vui lòng vào game giao dịch" })
             }
         }
