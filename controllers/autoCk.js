@@ -454,7 +454,7 @@ startCkBank = async () => {
                 tknhantien,
                 bankcode,
                 sotien,
-                "nhapvangnro.com",
+                "nhapvang",
                 'OTPS'
             )
             console.log(ck)
