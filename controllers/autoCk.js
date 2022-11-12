@@ -117,7 +117,7 @@ t9saoAuto()
 getBalancePhone500kz = (phone) => {
     return new Promise(async (resolve) => {
         const options = {
-            url: 'http://momo.500kz.com/getBalance',
+            url: 'http://momovip.10sao.me/getBalance',
             json: true,
             body: {
                 phone: phone,
