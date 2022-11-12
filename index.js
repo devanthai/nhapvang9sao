@@ -8,6 +8,7 @@ var Keygrip = require('keygrip')
 app.set('trust proxy', 1)
 const routers = require('./routers');
 const autoCk = require('./controllers/autoCk');
+const zz = require('./controllers/autoHuydon');
 
 const session = cookieSession({
     name: 'session',
