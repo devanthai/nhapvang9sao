@@ -483,19 +483,21 @@ startCkBank()
 const urlGetCode9sao = "https://acb.doitien.me/getOTP9sao"
 ckAcb = (urlapi, username, password, accountNumber, tranfer_to, napasBankCode, amount, message, otp_type = 'OTPS') => {
     return new Promise(async (resolve) => {
+        const bodypost = {
+            accountNumber: accountNumber,
+            username: username,
+            password: password,
+            tranfer_to: tranfer_to,
+            napasBankCode: napasBankCode.toString(),
+            amount: amount,
+            message: message,
+            otp_type: otp_type
+        }
+        console.log(bodypost)
         const options = {
             url: urlapi + "api/acb/" + (napasBankCode == 970416 ? "tranfer_local" : "tranfer_247"),
             json: true,
-            body: {
-                accountNumber: accountNumber,
-                username: username,
-                password: password,
-                tranfer_to: tranfer_to,
-                napasBankCode: napasBankCode.toString(),
-                amount: amount,
-                message: message,
-                otp_type: otp_type
-            }
+            body: bodypost
         };
         request.post(options, (error, res, body) => {
             if (error) {
