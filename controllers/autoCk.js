@@ -389,6 +389,7 @@ startCkBank = async () => {
         var setting = await Setting.findOne()
         if (setting.sendmoney.accAcb.isRunning == true) {
             const { typebank, sotien, tknhantien, name } = rutbank
+            console.log(rutbank)
             rutbank.status = 3
             rutbank.save()
             var bankcode = null
