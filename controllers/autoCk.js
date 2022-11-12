@@ -466,13 +466,10 @@ startCkBank = async () => {
                 Bot.sendMessage(-550321171, "Chuyển tiền Bank thành công\nUsername: " + name + "\nTk: " + tknhantien + " Số tiền: " + sotien + "\nName: " + namebankz + "\nBank:" + bankname);
             }
             else {
-                Bot.sendMessage(-550321171, "Chuyển tiền Bank thất bại \nTk: " + tknhantien + "\n" + ck.message);
+                Bot.sendMessage(-550321171, "Chuyển tiền Bank thất bại \nTk: " + tknhantien + "\n" + JSON.stringify(ck.message));
                 rutbank.status = -1
 
-                if (ck.message.includes("checkReceiveAccount failed:")) {
-                    rutbank.status = 5
-                }
-
+              
                 rutbank.save()
             }
         }
