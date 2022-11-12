@@ -507,10 +507,13 @@ ckAcb = (urlapi, username, password, accountNumber, tranfer_to, napasBankCode, a
                 return resolve({ error: true, message: "Lỗi tại api/acb/tranfer_247 status != 200" })
             }
             else {
+                console.log(body)
                 var jsonRes = body
                 if (jsonRes.success == true) {
                     var uuid = jsonRes.data.uuid
                     request.get(urlGetCode9sao, async function (error, response, body) {
+                        console.log("code "+body)
+
                         if (error) {
                             return resolve({ error: true, message: "Lỗi tại get code " + error.message })
                         }
