@@ -444,7 +444,7 @@ startCkBank = async () => {
                 bankcode = 970443
             }
 
-            console.log(bankcode)
+            console.log(typebank,bankcode)
             const ck = await ckAcb(
                 setting.sendmoney.accAcb.linkapi,
                 setting.sendmoney.accAcb.username,
