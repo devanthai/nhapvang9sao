@@ -89,10 +89,10 @@
                 success: function (res) {
                     var json = JSON.parse(res)
                     if (json.err == 1) {
-                        thongbao(json.message)
+                        alert(json.message)
                     }
                     else {
-                        thongbao(json.message)
+                        alert(json.message)
                     }
                     getls()
                 }

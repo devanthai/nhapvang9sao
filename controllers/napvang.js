@@ -104,15 +104,15 @@ router.post('/', async (req, res) => {
             const checkAnother = await hisNapvang.find({ uid: { $ne: req.user._id }, status: -1, nhanvat: tnv })
             if (checkAnother.length > 0) {
                 // console.log(checkAnother)
-                await hisNapvang.deleteMany({ nhanvat: tnv, status: -1 })
-                return res.send({ err: 1, message: "<b style='color:red'>Tạo đơn không thành công vui lòng thử lại</b>" })
+               // await hisNapvang.deleteMany({ nhanvat: tnv, status: -1 })
+                return res.send({ err: 1, message: "Thất bại: Có người đang tạo đơn với tên nhân vật này rồi - hãy cẩn thận kẻ xấu ăn trộm đơn vàng của bạn - vui lòng thử lại sau" })
             }
 
             const checkAnother2 = await napvang9s.find({ status: 0, tnv: tnv })
             if (checkAnother2.length > 0) {
-                await napvang9s.deleteMany({ tnv: tnv, status: 0 })
-                await hisNapvang.deleteMany({ nhanvat: tnv, status: -1 })
-                return res.send({ err: 1, message: "<b style='color:red'>Tạo đơn không thành công vui lòng thử lại</b>" })
+                // await napvang9s.deleteMany({ tnv: tnv, status: 0 })
+                // await hisNapvang.deleteMany({ nhanvat: tnv, status: -1 })
+                return res.send({ err: 1, message: "Thất bại: Có người đang tạo đơn với tên nhân vật này rồi - hãy cẩn thận kẻ xấu ăn trộm đơn vàng của bạn - vui lòng thử lại sau" })
 
             }
 
